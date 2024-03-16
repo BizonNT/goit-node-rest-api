@@ -34,7 +34,7 @@ export const deleteContact = async (req, res, next) => {
   try {
     const { id } = req.params;
     const result = await removeContact(id);
-    if (!contact) {
+    if (!result) {
       throw HttpError(404);
     }
     res.status(200).json(result);
