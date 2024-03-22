@@ -1,6 +1,6 @@
 node_modules/
+___info_help/
 .env
 .idea
 .vscode
 .DS_Store
-*.txt
