@@ -72,11 +72,12 @@ export const updateContactInfo = async (req, res, next) => {
 export const updateStatusContact = async (req, res, next) => {
   try {
     const { id } = req.params;
+    const { favorite } = req.body;
     const body = await getContactById(id);
     if (!body) {
       throw HttpError(404, "Not found");
     }
-    body.favorite = !body.favorite;
+    body.favorite = favorite;
     const result = await updateContact(id, body);
     res.status(200).json(result);
   } catch (error) {
